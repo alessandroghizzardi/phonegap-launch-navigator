@@ -751,8 +751,10 @@ public class LaunchNavigator {
             }
 
             logger.debug(logMsg);
-            logger.debug("URI: " + url);
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            logger.debug("URI: " + url);            
+            Intent intent = new Intent(Intent.ACTION_VIEW, supportedAppPackages.get(ATMAPP)+"/crc64b922f29bcd5b1e40.SearchViewActivity");
+            intent.setPackage(supportedAppPackages.get(ATMAPP));
+            //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             invokeIntent(intent);
             return null;
         }catch( JSONException e ) {

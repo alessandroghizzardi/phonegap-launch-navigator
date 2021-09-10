@@ -469,7 +469,7 @@ static NSDictionary* extras;
 }
 
 -(void)launchATMApp {
-    NSMutableString* url = [NSMutableString stringWithFormat:@"%@?latlong=%f,%f&navigate=yes",
+    NSMutableString* url = [NSMutableString stringWithFormat:@"%@?search=%f,%f", //&navigate=yes",
                             [self urlPrefixForMapApp:LNAppATM],
                             destCoord.latitude, destCoord.longitude];
     if(![self isEmptyDictionary:extras]){

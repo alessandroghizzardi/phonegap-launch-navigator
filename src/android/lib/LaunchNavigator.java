@@ -733,13 +733,13 @@ public class LaunchNavigator {
             String url = "atmapp://?";
             String logMsg = "Using ATM App to navigate to";
             if(!isNull(destLatLon)){
-                url += "latlong="+destLatLon;
+                url += "search="+destLatLon;
                 logMsg += " ["+destLatLon+"]";
             }else{
-                url += "q="+destAddress;
+                url += "search="+destAddress;
                 logMsg += " '"+destAddress+"'";
             }
-            url += "&navigate=yes";
+            //url += "&navigate=yes";
 
             logMsg += " from current location";
 

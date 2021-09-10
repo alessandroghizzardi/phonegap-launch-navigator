@@ -730,7 +730,7 @@ public class LaunchNavigator {
                 destLatLon = getLocationFromPos(params, "dest");
             }
 
-            String url = "atmapp://";//?";
+            String url = "atmapp://search";//?";
             String logMsg = "Using ATM App to navigate to";
             if(!isNull(destLatLon)){
             //    url += "search="+destLatLon;

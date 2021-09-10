@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, LNApp) {
     LNAppCabify,          // Cabify
     LNAppBaidu,           // Baidu
 	LNAppTaxis99,           // 99 Taxi
-	LNAppGaode           // Gaode (Amap)
+	LNAppGaode,           // Gaode (Amap)
 	LNAppBikeMi           // Bike MI
 };
 

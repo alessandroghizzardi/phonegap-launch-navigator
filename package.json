@@ -1,6 +1,6 @@
 {
     "version": "5.0.6",
-    "name": "sftc.plugin.launchnavigator",
+    "name": "uk.co.workingedge.phonegap.plugin.launchnavigator",
     "cordova_name": "Launch Navigator",
     "description": "Cordova/Phonegap plugin to navigate to a destination using native navigation apps on Android, iOS, and Windows",
     "author": "Dave Alden",
@@ -10,7 +10,7 @@
         "url": "https://github.com/alessandroghizzardi/phonegap-launch-navigator.git"
     },
     "cordova": {
-        "id": "sftc.plugin.launchnavigator",
+        "id": "uk.co.workingedge.phonegap.plugin.launchnavigator",
         "platforms": [
           "android",
           "ios",
@@ -28,5 +28,5 @@
         "navigation",
         "navigator"
     ],
-    "types": "./sftc.plugin.launchnavigator.d.ts"
+    "types": "./uk.co.workingedge.phonegap.plugin.launchnavigator.d.ts"
 }

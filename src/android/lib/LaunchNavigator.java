@@ -281,6 +281,8 @@ public class LaunchNavigator {
             error = launchGaode(params);
         }else if(appName.equals(TAXIS_99)){
             error = launch99Taxis(params);
+        }else if(appName.equals(BIKEMI)){
+            error = launchBikeMi(params);
         }else{
             error = launchApp(params);
         }
@@ -659,6 +661,52 @@ public class LaunchNavigator {
             String msg = e.getMessage();
             if(msg.contains(NO_APP_FOUND)){
                 msg = "Waze app is not installed on this device";
+            }
+            return msg;
+        }
+    }
+
+    private String launchBikeMi(JSONObject params) throws Exception{
+        try {
+            String destAddress = null;
+            String destLatLon = null;
+
+            String dType = params.getString("dType");
+
+            if(dType.equals("name")){
+                destAddress = getLocationFromName(params, "dest");
+            }else{
+                destLatLon = getLocationFromPos(params, "dest");
+            }
+
+            String url = "bikemi://?";
+            String logMsg = "Using Bike Mi to navigate to";
+            if(!isNull(destLatLon)){
+                url += "latlong="+destLatLon;
+                logMsg += " ["+destLatLon+"]";
+            }else{
+                url += "q="+destAddress;
+                logMsg += " '"+destAddress+"'";
+            }
+            url += "&navigate=yes";
+
+            logMsg += " from current location";
+
+            String extras = parseExtrasToUrl(params);
+            if(!isNull(extras)){
+                url += extras;
+                logMsg += " - extras="+extras;
+            }
+
+            logger.debug(logMsg);
+            logger.debug("URI: " + url);
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            invokeIntent(intent);
+            return null;
+        }catch( JSONException e ) {
+            String msg = e.getMessage();
+            if(msg.contains(NO_APP_FOUND)){
+                msg = "Bike MI app is not installed on this device";
             }
             return msg;
         }

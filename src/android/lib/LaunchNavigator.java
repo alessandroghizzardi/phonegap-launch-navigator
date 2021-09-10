@@ -756,9 +756,11 @@ public class LaunchNavigator {
             invokeIntent(intent);
             return null;
         }catch( JSONException e ) {
+
+            logger.debug(e);
             String msg = e.getMessage();
             if(msg.contains(NO_APP_FOUND)){
-                msg = "ATM App app is not installed on this device";
+                msg = "ATM App is not installed on this device";
             }
             return msg;
         }

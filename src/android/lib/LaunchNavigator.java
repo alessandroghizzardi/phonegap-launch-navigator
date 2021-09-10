@@ -752,7 +752,7 @@ public class LaunchNavigator {
 
             logger.debug(logMsg);
             logger.debug("URI: " + url);            
-            Intent intent = new Intent(supportedAppPackages.get(ATMAPP)+"/crc64b922f29bcd5b1e40.SearchViewActivity");
+            Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.setPackage(supportedAppPackages.get(ATMAPP));
             //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             invokeIntent(intent);

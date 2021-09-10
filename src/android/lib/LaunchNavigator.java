@@ -730,7 +730,8 @@ public class LaunchNavigator {
                 destLatLon = getLocationFromPos(params, "dest");
             }
 
-            String url = "atmapp://cerca";//?";
+            String url = "atmapp";
+            //String url = "atmapp://?";
             String logMsg = "Using ATM App to navigate to";
             if(!isNull(destLatLon)){
             //    url += "search="+destLatLon;
@@ -752,6 +753,8 @@ public class LaunchNavigator {
             logger.debug(logMsg);
             logger.debug("URI: " + url);
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+     
             invokeIntent(intent);
             return null;
         }catch( JSONException e ) {

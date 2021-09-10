@@ -78,6 +78,7 @@ public class LaunchNavigator {
     public final String BAIDU = "baidu";
     public final String TAXIS_99 = "taxis_99";
     public final String GAODE = "gaode";
+    public final String BIKEMI = "bikemi";
 
 
     public final Map<String, String> supportedAppPackages;
@@ -97,6 +98,7 @@ public class LaunchNavigator {
         _supportedAppPackages.put(BAIDU, "com.baidu.BaiduMap");
         _supportedAppPackages.put(TAXIS_99, "com.taxis99");
         _supportedAppPackages.put(GAODE, "com.autonavi.minimap");
+        _supportedAppPackages.put(BIKEMI, "com.urbansharing.citybike.milan");
         supportedAppPackages = Collections.unmodifiableMap(_supportedAppPackages);
     }
 
@@ -117,6 +119,7 @@ public class LaunchNavigator {
         _supportedAppNames.put(BAIDU, "Baidu Maps");
         _supportedAppNames.put(TAXIS_99, "99 Taxi");
         _supportedAppNames.put(GAODE, "Gaode Maps (Amap)");
+        _supportedAppNames.put(BIKEMI, "Bike MI");
         supportedAppNames = Collections.unmodifiableMap(_supportedAppNames);
     }
 

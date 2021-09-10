@@ -2,15 +2,15 @@
 <plugin
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="uk.co.workingedge.phonegap.plugin.launchnavigator"
+    id="sftc.plugin.launchnavigator"
     version="5.0.6">
 
   <name>Launch Navigator</name>
-  <description>Cordova/Phonegap plugin to navigate to a destination using native navigation apps on Android, iOS, and Windows</description>
-  <author>Dave Alden</author>
+  <description>SFTC implementation for Italy of Cordova/Phonegap plugin to navigate to a destination using native navigation apps on Android, iOS, and Windows</description>
+  <author>Softec S.p.a. - Source by Dave Alden</author>
 
-  <repo>https://github.com/dpa99c/phonegap-launch-navigator.git</repo>
-  <issue>https://github.com/dpa99c/phonegap-launch-navigator/issues</issue>
+  <repo>https://github.com/alessandroghizzardi/phonegap-launch-navigator.git</repo>
+  <issue>https://github.com/alessandroghizzardi/phonegap-launch-navigator/issues</issue>
 
   <license>MIT</license>
   <keywords>cordova,phonegap,ios,android,windows,navigation,navigator</keywords>
@@ -119,6 +119,7 @@
         <string>baidumap</string>
         <string>taxis99</string>
         <string>iosamap</string>
+        <string>bikemi</string>
       </array>
     </config-file>
 

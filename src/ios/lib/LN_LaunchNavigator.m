@@ -112,7 +112,8 @@ static NSDictionary* extras;
          @"cabify",
          @"baidu",
          @"taxis_99",
-         @"gaode"
+         @"gaode",
+         @"bikemi"
          ];
       
         appLocationTypes = @{
@@ -133,7 +134,8 @@ static NSDictionary* extras;
          @(LNAppCabify): LNLocTypeCoords,
          @(LNAppBaidu): LNLocTypeBoth,
          @(LNAppTaxis99): LNLocTypeCoords,
-         @(LNAppGaode): LNLocTypeCoords
+         @(LNAppGaode): LNLocTypeCoords,
+         @(LNAppBikeMi): LNLocTypeCoords
          };
         LNEmptyCoord = CLLocationCoordinate2DMake(LNEmptyLocation, LNEmptyLocation);
     }
@@ -445,6 +447,17 @@ static NSDictionary* extras;
 -(void)launchWaze {
     NSMutableString* url = [NSMutableString stringWithFormat:@"%@?ll=%f,%f&navigate=yes",
                             [self urlPrefixForMapApp:LNAppWaze],
+                            destCoord.latitude, destCoord.longitude];
+    if(![self isEmptyDictionary:extras]){
+        [url appendFormat:@"%@", [self extrasToQueryParams:extras]];
+    }
+    [self logDebugURI:url];
+    [self openScheme:url];
+}
+
+-(void)launchBikeMi {
+    NSMutableString* url = [NSMutableString stringWithFormat:@"%@?latlong=%f,%f&navigate=yes",
+                            [self urlPrefixForMapApp:LNAppBikeMi],
                             destCoord.latitude, destCoord.longitude];
     if(![self isEmptyDictionary:extras]){
         [url appendFormat:@"%@", [self extrasToQueryParams:extras]];
@@ -1044,6 +1057,8 @@ static NSDictionary* extras;
         [self launchGaode];
     }else if(app == LNAppTaxis99){
         [self launch99Taxis];
+    }else if(app == LNAppBikeMi){
+        [self launchBikeMi];
     }
 }
 
@@ -1104,6 +1119,9 @@ static NSDictionary* extras;
         case LNAppTaxis99:
         name = @"taxis_99";
         break;
+        case LNAppBikeMi:
+        name = @"bikemi";
+        break;
         default:
         [NSException raise:NSGenericException format:@"Unexpected app name"];
         
@@ -1150,6 +1168,8 @@ static NSDictionary* extras;
         cmmName = LNAppGaode;
     }else if([lnName isEqual: @"taxis_99"]){
         cmmName = LNAppTaxis99;
+    }else if([lnName isEqual: @"bikemi"]){
+        cmmName = LNAppBikeMi;
     }else{
         [NSException raise:NSGenericException format:@"Unexpected app name: %@", lnName];
     }
@@ -1378,6 +1398,9 @@ static NSDictionary* extras;
 
         case LNAppTaxis99:
         return @"taxis99://";
+
+        case LNAppBikeMi:
+        return @"bikemi://";
         
         default:
         return nil;

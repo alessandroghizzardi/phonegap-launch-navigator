@@ -115,7 +115,8 @@ ln.APP = {
     CABIFY: "cabify",
     BAIDU: "baidu",
     TAXIS_99: "taxis_99",
-    GAODE: "gaode"
+    GAODE: "gaode",
+    BIKEMI: "bikemi"
 };
 
 /**
@@ -138,7 +139,8 @@ ln.APPS_BY_PLATFORM[ln.PLATFORM.ANDROID] = [
     ln.APP.CABIFY,
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
-    ln.APP.GAODE
+    ln.APP.GAODE,
+    ln.APP.BIKEMI
 ];
 ln.APPS_BY_PLATFORM[ln.PLATFORM.IOS] = [
     ln.APP.USER_SELECT,
@@ -159,7 +161,8 @@ ln.APPS_BY_PLATFORM[ln.PLATFORM.IOS] = [
     ln.APP.CABIFY,
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
-    ln.APP.GAODE
+    ln.APP.GAODE,
+    ln.APP.BIKEMI
 ];
 ln.APPS_BY_PLATFORM[ln.PLATFORM.WINDOWS] = [
     ln.APP.BING_MAPS
@@ -199,6 +202,7 @@ ln.APP_NAMES[ln.APP.CABIFY] = "Cabify";
 ln.APP_NAMES[ln.APP.BAIDU] = "Baidu Maps";
 ln.APP_NAMES[ln.APP.TAXIS_99] = "99 Taxi";
 ln.APP_NAMES[ln.APP.GAODE] = "Gaode Maps (Amap)";
+ln.APP_NAMES[ln.APP.BIKEMI] = "Bike MI";
 
 /**
  * All possible transport modes
@@ -252,6 +256,11 @@ ln.TRANSPORT_MODES[ln.PLATFORM.ANDROID][ln.APP.GAODE] = [
     ln.TRANSPORT_MODE.BICYCLING,
     ln.TRANSPORT_MODE.TRANSIT
 ];
+// Bike MI
+ln.TRANSPORT_MODES[ln.PLATFORM.ANDROID][ln.APP.BIKEMI] = [
+    ln.TRANSPORT_MODE.WALKING,
+    ln.TRANSPORT_MODE.BICYCLING
+];
 
 // Windows
 ln.TRANSPORT_MODES[ln.PLATFORM.WINDOWS] = {};
@@ -302,6 +311,10 @@ ln.TRANSPORT_MODES[ln.PLATFORM.IOS][ln.APP.GAODE] = [
     ln.TRANSPORT_MODE.BICYCLING,
     ln.TRANSPORT_MODE.TRANSIT
 ];
+ln.TRANSPORT_MODES[ln.PLATFORM.IOS][ln.APP.BIKEMI] = [
+    ln.TRANSPORT_MODE.WALKING,
+    ln.TRANSPORT_MODE.BICYCLING
+];
 
 /**
  * Apps by platform that support specifying a start location
@@ -321,7 +334,8 @@ ln.SUPPORTS_START[ln.PLATFORM.ANDROID] = [
     ln.APP.CABIFY,
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
-    ln.APP.GAODE
+    ln.APP.GAODE, 
+    ln.APP.BIKEMI
 ];
 ln.SUPPORTS_START[ln.PLATFORM.IOS] = [
     ln.APP.USER_SELECT,
@@ -338,7 +352,8 @@ ln.SUPPORTS_START[ln.PLATFORM.IOS] = [
     ln.APP.CABIFY,
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
-    ln.APP.GAODE
+    ln.APP.GAODE,
+    ln.APP.BIKEMI
 ];
 ln.SUPPORTS_START[ln.PLATFORM.WINDOWS] = [
     ln.APP.BING_MAPS

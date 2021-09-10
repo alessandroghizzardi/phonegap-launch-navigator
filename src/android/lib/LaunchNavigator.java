@@ -731,7 +731,7 @@ public class LaunchNavigator {
             }
 
             //String url = "atmapp://?";
-            String url = "atmapp";
+            String url = "atmapp://";
             String logMsg = "Using ATM App to navigate to";
             if(!isNull(destLatLon)){
                 //url += "search="+destLatLon;
@@ -756,8 +756,6 @@ public class LaunchNavigator {
             invokeIntent(intent);
             return null;
         }catch( JSONException e ) {
-
-            logger.debug(e);
             String msg = e.getMessage();
             if(msg.contains(NO_APP_FOUND)){
                 msg = "ATM App is not installed on this device";

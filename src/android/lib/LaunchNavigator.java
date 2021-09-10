@@ -751,7 +751,7 @@ public class LaunchNavigator {
 
             logger.debug(logMsg);
             logger.debug("URI: " + url);
-            Intent intent = new Intent(Intent.ACTION_MAIN, Uri.parse(url));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             invokeIntent(intent);
             return null;
         }catch( JSONException e ) {

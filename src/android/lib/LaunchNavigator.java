@@ -79,7 +79,7 @@ public class LaunchNavigator {
     public final String TAXIS_99 = "taxis_99";
     public final String GAODE = "gaode";
     public final String BIKEMI = "bikemi";
-    public final String ATMAPP = "atmapp";
+    //public final String ATMAPP = "atmapp";
 
 
     public final Map<String, String> supportedAppPackages;
@@ -100,7 +100,7 @@ public class LaunchNavigator {
         _supportedAppPackages.put(TAXIS_99, "com.taxis99");
         _supportedAppPackages.put(GAODE, "com.autonavi.minimap");
         _supportedAppPackages.put(BIKEMI, "com.urbansharing.citybike.milan");
-        _supportedAppPackages.put(ATMAPP, "it.atm.appmobile");
+        //_supportedAppPackages.put(ATMAPP, "it.atm.appmobile");
         supportedAppPackages = Collections.unmodifiableMap(_supportedAppPackages);
     }
 
@@ -122,7 +122,7 @@ public class LaunchNavigator {
         _supportedAppNames.put(TAXIS_99, "99 Taxi");
         _supportedAppNames.put(GAODE, "Gaode Maps (Amap)");
         _supportedAppNames.put(BIKEMI, "Bike MI");
-        _supportedAppNames.put(ATMAPP, "ATM");
+        //_supportedAppNames.put(ATMAPP, "ATM");
         supportedAppNames = Collections.unmodifiableMap(_supportedAppNames);
     }
 
@@ -286,8 +286,8 @@ public class LaunchNavigator {
             error = launch99Taxis(params);
         }else if(appName.equals(BIKEMI)){
             error = launchBikeMi(params);
-        }else if(appName.equals(ATMAPP)){
-            error = launchAtmApp(params);
+        // }else if(appName.equals(ATMAPP)){
+        //     error = launchAtmApp(params);
         }else{
             error = launchApp(params);
         }
@@ -717,54 +717,54 @@ public class LaunchNavigator {
         }
     }
 
-    private String launchAtmApp(JSONObject params) throws Exception{
-        try {
-            String destAddress = null;
-            String destLatLon = null;
+    // private String launchAtmApp(JSONObject params) throws Exception{
+    //     try {
+    //         String destAddress = null;
+    //         String destLatLon = null;
 
-            String dType = params.getString("dType");
+    //         String dType = params.getString("dType");
 
-            if(dType.equals("name")){
-                destAddress = getLocationFromName(params, "dest");
-            }else{
-                destLatLon = getLocationFromPos(params, "dest");
-            }
+    //         if(dType.equals("name")){
+    //             destAddress = getLocationFromName(params, "dest");
+    //         }else{
+    //             destLatLon = getLocationFromPos(params, "dest");
+    //         }
 
-            //String url = "atmapp://?";
-            String url = "atmapp://";
-            String logMsg = "Using ATM App to navigate to";
-            if(!isNull(destLatLon)){
-                //url += "search="+destLatLon;
-                logMsg += " ["+destLatLon+"]";
-            }else{
-                //url += "search="+destAddress;
-                logMsg += " '"+destAddress+"'";
-            }
-            //url += "&navigate=yes";
+    //         //String url = "atmapp://?";
+    //         String url = "atmapp://";
+    //         String logMsg = "Using ATM App to navigate to";
+    //         if(!isNull(destLatLon)){
+    //             //url += "search="+destLatLon;
+    //             logMsg += " ["+destLatLon+"]";
+    //         }else{
+    //             //url += "search="+destAddress;
+    //             logMsg += " '"+destAddress+"'";
+    //         }
+    //         //url += "&navigate=yes";
 
-            logMsg += " from current location";
+    //         logMsg += " from current location";
 
-            String extras = parseExtrasToUrl(params);
-            if(!isNull(extras)){
-                //url += extras;
-                logMsg += " - extras="+extras;
-            }
+    //         String extras = parseExtrasToUrl(params);
+    //         if(!isNull(extras)){
+    //             //url += extras;
+    //             logMsg += " - extras="+extras;
+    //         }
 
-            logger.debug(logMsg);
-            logger.debug("URI: " + url);            
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setPackage(supportedAppPackages.get(ATMAPP));
-            //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            invokeIntent(intent);
-            return null;
-        }catch( JSONException e ) {
-            String msg = e.getMessage();
-            if(msg.contains(NO_APP_FOUND)){
-                msg = "ATM App is not installed on this device";
-            }
-            return msg;
-        }
-    }
+    //         logger.debug(logMsg);
+    //         logger.debug("URI: " + url);            
+    //         Intent intent = new Intent(Intent.ACTION_MAIN);
+    //         intent.setPackage(supportedAppPackages.get(ATMAPP));
+    //         //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+    //         invokeIntent(intent);
+    //         return null;
+    //     }catch( JSONException e ) {
+    //         String msg = e.getMessage();
+    //         if(msg.contains(NO_APP_FOUND)){
+    //             msg = "ATM App is not installed on this device";
+    //         }
+    //         return msg;
+    //     }
+    // }
 
     private String launchYandex(JSONObject params) throws Exception{
         try {

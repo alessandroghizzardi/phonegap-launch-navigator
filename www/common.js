@@ -116,8 +116,8 @@ ln.APP = {
     BAIDU: "baidu",
     TAXIS_99: "taxis_99",
     GAODE: "gaode",
-    BIKEMI: "bikemi",
-    ATMAPP: "atmapp"
+    BIKEMI: "bikemi"//,
+    //ATMAPP: "atmapp"
 };
 
 /**
@@ -141,8 +141,8 @@ ln.APPS_BY_PLATFORM[ln.PLATFORM.ANDROID] = [
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
     ln.APP.GAODE,
-    ln.APP.BIKEMI,
-    ln.APP.ATMAPP
+    ln.APP.BIKEMI//,
+   // ln.APP.ATMAPP
 ];
 ln.APPS_BY_PLATFORM[ln.PLATFORM.IOS] = [
     ln.APP.USER_SELECT,
@@ -164,8 +164,8 @@ ln.APPS_BY_PLATFORM[ln.PLATFORM.IOS] = [
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
     ln.APP.GAODE,
-    ln.APP.BIKEMI,
-    ln.APP.ATMAPP
+    ln.APP.BIKEMI//,
+    //ln.APP.ATMAPP
 ];
 ln.APPS_BY_PLATFORM[ln.PLATFORM.WINDOWS] = [
     ln.APP.BING_MAPS
@@ -206,7 +206,7 @@ ln.APP_NAMES[ln.APP.BAIDU] = "Baidu Maps";
 ln.APP_NAMES[ln.APP.TAXIS_99] = "99 Taxi";
 ln.APP_NAMES[ln.APP.GAODE] = "Gaode Maps (Amap)";
 ln.APP_NAMES[ln.APP.BIKEMI] = "Bike MI";
-ln.APP_NAMES[ln.APP.ATMAPP] = "ATM";
+//ln.APP_NAMES[ln.APP.ATMAPP] = "ATM";
 
 /**
  * All possible transport modes
@@ -266,11 +266,11 @@ ln.TRANSPORT_MODES[ln.PLATFORM.ANDROID][ln.APP.BIKEMI] = [
     ln.TRANSPORT_MODE.BICYCLING
 ];
 // ATM
-ln.TRANSPORT_MODES[ln.PLATFORM.ANDROID][ln.APP.ATMAPP] = [
-    ln.TRANSPORT_MODE.WALKING,
-    ln.TRANSPORT_MODE.BICYCLING,
-    ln.TRANSPORT_MODE.TRANSIT
-];
+// ln.TRANSPORT_MODES[ln.PLATFORM.ANDROID][ln.APP.ATMAPP] = [
+//     ln.TRANSPORT_MODE.WALKING,
+//     ln.TRANSPORT_MODE.BICYCLING,
+//     ln.TRANSPORT_MODE.TRANSIT
+// ];
 
 // Windows
 ln.TRANSPORT_MODES[ln.PLATFORM.WINDOWS] = {};
@@ -325,11 +325,11 @@ ln.TRANSPORT_MODES[ln.PLATFORM.IOS][ln.APP.BIKEMI] = [
     ln.TRANSPORT_MODE.WALKING,
     ln.TRANSPORT_MODE.BICYCLING
 ];
-ln.TRANSPORT_MODES[ln.PLATFORM.IOS][ln.APP.ATMAPP] = [
-    ln.TRANSPORT_MODE.WALKING,
-    ln.TRANSPORT_MODE.BICYCLING,
-    ln.TRANSPORT_MODE.TRANSIT
-];
+// ln.TRANSPORT_MODES[ln.PLATFORM.IOS][ln.APP.ATMAPP] = [
+//     ln.TRANSPORT_MODE.WALKING,
+//     ln.TRANSPORT_MODE.BICYCLING,
+//     ln.TRANSPORT_MODE.TRANSIT
+// ];
 
 /**
  * Apps by platform that support specifying a start location
@@ -350,8 +350,8 @@ ln.SUPPORTS_START[ln.PLATFORM.ANDROID] = [
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
     ln.APP.GAODE, 
-    ln.APP.BIKEMI,
-    ln.APP.ATMAPP
+    ln.APP.BIKEMI//,
+    //ln.APP.ATMAPP
 ];
 ln.SUPPORTS_START[ln.PLATFORM.IOS] = [
     ln.APP.USER_SELECT,
@@ -369,8 +369,8 @@ ln.SUPPORTS_START[ln.PLATFORM.IOS] = [
     ln.APP.BAIDU,
     ln.APP.TAXIS_99,
     ln.APP.GAODE,
-    ln.APP.BIKEMI,
-    ln.APP.ATMAPP
+    ln.APP.BIKEMI//,
+    //ln.APP.ATMAPP
 ];
 ln.SUPPORTS_START[ln.PLATFORM.WINDOWS] = [
     ln.APP.BING_MAPS

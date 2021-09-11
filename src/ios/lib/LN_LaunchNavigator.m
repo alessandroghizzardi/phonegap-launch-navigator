@@ -468,16 +468,16 @@ static NSDictionary* extras;
     [self openScheme:url];
 }
 
--(void)launchATMApp {
-    NSMutableString* url = [NSMutableString stringWithFormat:@"%@?search=%f,%f", //&navigate=yes",
-                            [self urlPrefixForMapApp:LNAppATM],
-                            destCoord.latitude, destCoord.longitude];
-    if(![self isEmptyDictionary:extras]){
-        [url appendFormat:@"%@", [self extrasToQueryParams:extras]];
-    }
-    [self logDebugURI:url];
-    [self openScheme:url];
-}
+// -(void)launchATMApp {
+//     NSMutableString* url = [NSMutableString stringWithFormat:@"%@?search=%f,%f", //&navigate=yes",
+//                             [self urlPrefixForMapApp:LNAppATM],
+//                             destCoord.latitude, destCoord.longitude];
+//     if(![self isEmptyDictionary:extras]){
+//         [url appendFormat:@"%@", [self extrasToQueryParams:extras]];
+//     }
+//     [self logDebugURI:url];
+//     [self openScheme:url];
+// }
 
 -(void)launchYandex {
     NSMutableString* url = nil;
@@ -1072,8 +1072,8 @@ static NSDictionary* extras;
         [self launch99Taxis];
     }else if(app == LNAppBikeMi){
         [self launchBikeMi];
-    }else if(app == LNAppATM){
-        [self launchATMApp];
+    // }else if(app == LNAppATM){
+    //     [self launchATMApp];
     }
 }
 
